@@ -95,7 +95,7 @@ public class UserDAOImpl implements UserDAO{
 		String sql = "select * from " + TABLE + " where user_email=?";
 		return queryUser(sql, new Object[]{email});
 		*/
-		String cql ="match (n:User{email:\""+email+"\"}) return n.id,n.email,n.status,n.activationKey,n.avatar,n.desc,n.data,n.pwd";
+		String cql ="match (n:person{email:\""+email+"\"}) return n.id,n.email,n.status,n.activationKey,n.avatar,n.desc,n.data,n.pwd";
 		Driver driver=GraphDatabase.driver("bolt://47.106.233.132:7687",AuthTokens.basic("neo4j","s302"));
 		 Session session = driver.session();
 	        StatementResult result = session.run(cql);
@@ -155,7 +155,7 @@ public class UserDAOImpl implements UserDAO{
 
 	public String getPwdByEmail(String email) {
 		
-		String cql="match (n:User{email:\""+email+"\"}) return n.pwd";
+		String cql="match (n:person{email:\""+email+"\"}) return n.pwd";
 		Driver driver=GraphDatabase.driver("bolt://47.106.233.132:7687",AuthTokens.basic("neo4j","s302"));
 		 Session session = driver.session();
 	        StatementResult result = session.run(cql);
@@ -267,10 +267,13 @@ public class UserDAOImpl implements UserDAO{
 		}, keyHolder );
 		*/
 		//jdbcTemplate.update(sql);
-		Random r1 = new Random(20);
-		int n = r1.nextInt();
-		final String cql="";
-		
+		int n=(int) (Math.random() * Math.pow(2,30));
+		final String cql="create (n:person{name:\""+user.getUser_name()+"\",email:\""+user.getUser_email()+"\",pwd:\""+user.getUser_pwd()+"\",activationKey:\""+user.getUser_activationKey()+"\",avatar:\""+user.getUser_avatar()+"\",status:"+user.getUser_status()+",id:"+n+"})";
+		Driver driver=GraphDatabase.driver("bolt://47.106.233.132:7687",AuthTokens.basic("neo4j","s302"));
+		 Session session = driver.session();
+	        StatementResult result = session.run(cql);
+	    session.close();
+	    driver.close();
 		return n;
 		
 	}
