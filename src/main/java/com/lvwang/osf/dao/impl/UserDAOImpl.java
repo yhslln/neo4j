@@ -279,6 +279,7 @@ public class UserDAOImpl implements UserDAO{
 	}
 
 	public int activateUser(final User user) {
+		/*
 		final String sql = "update " + TABLE + " set user_status=?, user_activationKey=?"+
 					 " where id=?";
 		return jdbcTemplate.update(new PreparedStatementCreator() {
@@ -292,7 +293,14 @@ public class UserDAOImpl implements UserDAO{
 				return ps;
 			}
 		});
-		
+		*/
+		final String cql = "match (n:person{email:\""+user.getUser_email()+"\"}) set n.status="+user.getUser_status()+" remove n.activationKey return n";
+		Driver driver=GraphDatabase.driver("bolt://47.106.233.132:7687",AuthTokens.basic("neo4j","s302"));
+		 Session session = driver.session();
+	        StatementResult result = session.run(cql);
+	    session.close();
+	    driver.close();
+		return 0;
 	}
 	
 
