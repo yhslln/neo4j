@@ -27,7 +27,7 @@
 				    关注
 				  </a>
 				  <a class="item" href='<c:url value="/followers"/>'>
-				    粉丝
+				   发现
 				  </a>
 				</div>
 			

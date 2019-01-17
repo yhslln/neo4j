@@ -50,5 +50,8 @@
 		<nature>org.eclipse.wst.common.project.facet.core.nature</nature>
 		<nature>org.eclipse.wst.common.modulecore.ModuleCoreNature</nature>
 		<nature>org.eclipse.wst.jsdt.core.jsNature</nature>
+		<nature>com.genuitec.eclipse.ast.deploy.core.deploymentnature</nature>
 	</natures>
 </projectDescription>
+
+

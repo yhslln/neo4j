@@ -22,6 +22,12 @@
   <script src="<%=request.getContextPath() %>/js/spost.js"></script>
   <script src="<%=request.getContextPath() %>/js/search.js"></script>
   <script src="<%=request.getContextPath() %>/js/emojione.js"></script>
+  <style>
+  	.icon-img{
+  		width: 40px;
+  		height: 40px;
+  	}
+  </style>
 </head>
 <body>
   <%@ include file="topbar.jsp" %>
@@ -30,24 +36,24 @@
           <div class="span8">  
 	          	<div class="header_box">
 	          		<div class="ui avatar image">
-	                	<img src="${img_base_url }${user.user_avatar}">
+	                	<!-- <img src="${img_base_url }${user.user_avatar}"> -->
 	                </div>                
 					<div id="action_bar">
 						<div class="ui labeled icon menu actions" >
 						  <a class="item sport_link" href="#">
-						    <i class="blue big font icon"></i>
+						    <img class="icon-img" src="<%=request.getContextPath() %>/img/bianji.png"/>
 						    发状态
 						  </a>
 						  <a class="item album_link" href="<c:url value="/album/upload"/>">
-						    <i class="pink big photo icon"></i>
+						    <img class="icon-img" src="<%=request.getContextPath() %>/img/xiangji.png"/>
 						    传图片
 						  </a>
 						  <a class="item post_link" href="<c:url value="/post/create"/>">
-						    <i class="big write icon"></i>
+						    <img class="icon-img" src="<%=request.getContextPath() %>/img/shu.png"/>
 						    写日志
 						  </a>
 						  <a class="item link">
-						    <i class="green big linkify icon"></i>
+						    <img class="icon-img" src="<%=request.getContextPath() %>/img/fenxiang.png"/>
 						    链接
 						  </a>							
 						</div>
@@ -166,16 +172,16 @@
 					<div class="ui mini statistics">
 					  <div class="statistic">
 					    <div class="value">
-					      <a href="<c:url value="/followers" />">${counter.follower }</a>
+					      <a href="<c:url value="/followings"/>">${counter.following }</a>
 					    </div>
-					    <div class="label">粉丝
+					    <div class="label">关注
 					    </div>
 					  </div>
 					  <div class="statistic">
 					    <div class="value">
-					      <a href="<c:url value="/followings"/>">${counter.following }</a>
+					      <a href="<c:url value="/followers" />">${counter.follower }</a>
 					    </div>
-					    <div class="label">关注
+					    <div class="label">图片
 					    </div>
 					  </div>
 					  <div class="statistic">

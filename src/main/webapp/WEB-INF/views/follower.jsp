@@ -26,14 +26,14 @@
 				    关注
 				  </a>
 				  <a class="active teal item" href='<c:url value="/followers"/>'>
-				    粉丝
+				    发现
 				  </a>
 				</div>
 			
 			</div>
 			<div class="span8">
 				<div class="ui header">
-					我的关注
+					好友的好友
 				</div>
 				<div class="ui divider">
 				</div>
