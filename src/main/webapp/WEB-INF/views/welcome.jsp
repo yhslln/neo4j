@@ -15,7 +15,7 @@
   	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/css/jquery.fullPage.css">
   	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/css/welcome.css">
 	<style>
-	.section1 { background: url("<%=request.getContextPath() %>/img/background.png") no-repeat; background-size: cover;}
+	.section1 { background: url("<%=request.getContextPath() %>/img/background.jpg") no-repeat; background-size: cover;}
 	.section4 { background: url("<%=request.getContextPath() %>/img/gallery/8.jpg") no-repeat;
 				background-size: cover;}
 	</style>
@@ -31,10 +31,10 @@
 	<div class="nav">
 		<div class="navbar">
 			<div class="logo">
-				<img src="<%=request.getContextPath() %>/img/logo.png" alt="" />
+				<img src="<%=request.getContextPath() %>/img/xingqiu.png" alt="" />
 				<span><a href="<c:url value="/explore" />">探索</a></span>
 			</div>
-			<a href="https://github.com/lvwangbeta/osf"><i class="github icon"></i></a>
+			<!-- <a href="https://github.com/lvwangbeta/osf"><i class="github icon"></i></a> -->
 		</div>
 	</div>
 	<div id="welcome">
@@ -45,9 +45,9 @@
 					<div class="span12">
 						<div class="row">
 							<div class="span6 overview">
-								<p class="initials">OSF</p>
-								<p class="en_initials">Open Share Freedom</p>
-								<p class="zh_initials">开放 分享 自由</p>
+								<p class="initials">MSF</p>
+								<p class="en_initials">Make Friends Simple</p>
+								<p class="zh_initials">简单交友</p>
 							</div>
 							<div class="span6">
 								<div class="login ui form">
@@ -78,6 +78,7 @@
 				<img src="<%=request.getContextPath() %>/img/pulldown_tip.png" alt="向下滑动">
 			</div>
 		</div>
+		<!-- 
 		<div class="section section2">
 			<div class="container">
 				<div class="row">
@@ -109,14 +110,13 @@
 				</c:forEach>
 
 			</div>
-			<!-- end tags -->	
-		</div>
+		</div>-->
 		<div class="section section3">
 			<div class="container">
 				<div class="row">
 					<div class="span12 center">
 						<div class="header">
-							在OSF 你可以
+							在MSF 你可以
 						</div>	
 					
 					</div>
@@ -125,21 +125,24 @@
 			<div class="features row1">
 				<div class="feature">
 					<div class="circle">
-						<i class="blue big font icon"></i>
+						<img class="icon-img" src="<%=request.getContextPath() %>/img/bianji.png"/>
+						<!-- <i class="blue big font icon"></i> -->
 					</div>
 					<div class="header">说说</div>
 					<div class="desc">发送简短的消息<br/>分享你此时的状态</div>
 				</div>
 				<div class="feature">
 					<div class="circle">
-						<i class="pink big photo icon"></i>
+						<img class="icon-img" src="<%=request.getContextPath() %>/img/xiangji.png"/>
+						<!-- <i class="pink big photo icon"></i> -->
 					</div>
 					<div class="header">相册</div>
 					<div class="desc">上传图片<br/>记录美好时刻</div>
 				</div>
 				<div class="feature">
 					<div class="circle">
-						<i class="big write icon"></i>
+						<img class="icon-img" src="<%=request.getContextPath() %>/img/shu.png"/>
+						<!--<i class="big write icon"></i>-->
 					</div>
 					<div class="header">日志</div>
 					<div class="desc">记录生活点滴</div>
@@ -148,21 +151,24 @@
 			<div class="features row1">
 				<div class="feature">
 					<div class="circle">
-						<i class="big orange tag icon"></i>
+					    <img class="icon-img" src="<%=request.getContextPath() %>/img/biaoqian.png"/>
+						<!-- <i class="big orange tag icon"></i> -->
 					</div>
 					<div class="header">标签</div>
 					<div class="desc">兴趣<br/>从标签出发</div>
 				</div>
 				<div class="feature">
 					<div class="circle">
-						<i class="big users icon"></i>
+						<img class="icon-img" src="<%=request.getContextPath() %>/img/yonghu.png"/>
+						<!-- <i class="big users icon"></i> -->
 					</div>
 					<div class="header">朋友</div>
 					<div class="desc">关注喜欢的朋友<br/>不错过他的动态</div>
 				</div>
 				<div class="feature">
 					<div class="circle">
-						<i class="big red heart icon"></i>
+						<img class="icon-img" src="<%=request.getContextPath() %>/img/xihuan_.png"/>
+						<!-- <i class="big red heart icon"></i> -->
 					</div>
 					<div class="header">喜欢</div>
 					<div class="desc">相册、日志<br/>喜欢就收藏起来吧</div>
@@ -176,7 +182,7 @@
 				<div class="row">
 					<div class="span12 center">
 						<div class="header">
-							探索, OSF
+							探索, MSF
 						</div>					
 					</div>
 				</div>			
@@ -203,7 +209,7 @@
 					$('.section2').find('p').fadeIn(2000);
 				}
 				if(index == 3){
-					$('.section3').find('.features').delay(50).animate({
+					$('.section3').find('.features').animate({
 						bottom: '0'
 					}, 1000, 'easeOutExpo');
 				

@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Random;
 
-import javax.annotation.Resource;
+import javax.annotation.Resource; 
 
 import org.apache.log4j.Logger;
 import org.neo4j.driver.v1.AuthTokens;

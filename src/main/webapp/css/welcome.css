@@ -203,7 +203,7 @@
 
 .navbar .logo > img{
 	vertical-align: middle;
-	width: 32px;
+	width: 42px;
 	height: 42px;
 }
 
@@ -419,5 +419,10 @@
 }
 .section4 .row:FIRST-CHILD {
 	margin-bottom: 50px;
+}
+
+.icon-img{
+	width: 149.6px;
+	height: 149.6px;
 }
 
